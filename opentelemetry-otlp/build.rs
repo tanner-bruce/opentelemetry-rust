@@ -15,7 +15,7 @@ fn main() {
         .join("tonic");
         std::fs::create_dir_all(out_dir.clone()).expect("cannot create output dir");
         tonic_build::configure()
-        .build_server(std::env::var_os("CARGO_FEATURE_INTEGRATION_TESTING").is_some())
+        .build_server(true)
         .build_client(true)
         .out_dir(out_dir)
         .compile(
